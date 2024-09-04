@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Mathématiques et Géométrie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            background-color: #333;
+            padding: 10px;
+            height: 100%;
+        }
+
+        .tabs button {
+            background-color: #444;
+            color: white;
+            padding: 15px;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .tabs button.active {
+            background-color: #0066cc;
+        }
+
+        .content {
+            margin-left: 210px;
+            padding: 20px;
+        }
+
+        .content section {
+            display: none;
+        }
+
+        .content section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .video {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .video img {
+            margin-right: 10px;
+        }
+
+        .video a {
+            text-decoration: none;
+            color: #0066cc;
+            font-size: 18px;
+        }
+
+        .video a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tabs">
+        <button class="tab-link active" onclick="openTab(event, 'math')">Mathématique</button>
+        <button class="tab-link" onclick="openTab(event, 'geo')">Géométrie</button>
+    </div>
+
+    <div class="content">
+        <section id="math" class="active">
+            <h2>Mathématique</h2>
+            <div class="video">
+                <img src="https://img.youtube.com/vi/9MEs8uGyLjk/0.jpg" alt="Vidéo 1" width="120">
+                <a href="https://youtu.be/9MEs8uGyLjk?si=KlDOLI5Cpvmrrl3b" target="_blank">Probabilité - Introduction aux probabilités</a>
+            </div>
+            <div class="video">
+                <img src="https://img.youtube.com/vi/qHF5kiDFkW8/0.jpg" alt="Vidéo 2" width="120">
+                <a href="https://youtu.be/qHF5kiDFkW8?si=YKzvNdpxuYkh5aow" target="_blank">Calcul mental rapide - Astuces pour multiplier</a>
+            </div>
+        </section>
+
+        <section id="geo">
+            <h2>Géométrie</h2>
+            <div class="video">
+                <img src="https://img.youtube.com/vi/EoT48VtnUJ4/0.jpg" alt="Vidéo 3" width="120">
+                <a href="https://youtu.be/EoT48VtnUJ4?si=0_Vhj_AwCoF16hwr" target="_blank">Introduction à la géométrie plane</a>
+            </div>
+            <div class="video">
+                <img src="https://img.youtube.com/vi/aostYZK5jkE/0.jpg" alt="Vidéo 4" width="120">
+                <a href="https://youtu.be/aostYZK5jkE?si=39IXgOLNIl9vF3YR" target="_blank">Théorème de Pythagore - Explication simple</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByTagName("section");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
